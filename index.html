@@ -196,3 +196,300 @@
                 
                 <div class="card-content">
                     <span class="tag">物料管理</span><span class="tag
+                                                     <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立屏東科技大學 產學合作中心 - Colab 預覽版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #004d40 0%, #013220 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #4db6ac;
+            transition: width .3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .tech-bg-soft {
+            background-color: #f8fafc;
+        }
+
+        /* Colab 專用標記樣式 */
+        .colab-badge {
+            background: rgba(249, 171, 0, 0.1);
+            border: 1px solid #f9ab00;
+            color: #e37400;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 頂部 Colab 提示條 -->
+    <div class="bg-amber-50 border-b border-amber-100 py-2 px-4 text-center text-xs text-amber-800">
+        <i class="fas fa-code mr-2"></i> 這是從 Google Colab 生成的網頁預覽版本。
+    </div>
+
+    <!-- 導覽列 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <div class="w-10 h-10 bg-teal-800 rounded-full flex items-center justify-center text-white mr-3 shadow-inner">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold text-teal-900 block leading-tight">研究發展處 產學合作中心</span>
+                            <span class="text-xs text-gray-500 tracking-widest uppercase">NPUST Industry-Academia</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 桌面版選單 -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#special-fields" class="nav-link text-gray-700 hover:text-teal-700 font-medium text-sm">核心項目</a>
+                    <a href="#industry-coop" class="nav-link text-gray-700 hover:text-teal-700 font-medium text-sm">服務流程</a>
+                    
+                    <!-- 前往中心官網按鈕 -->
+                    <a href="https://ccpc.npust.edu.tw/" target="_blank" class="flex items-center text-teal-700 hover:text-teal-900 font-bold text-sm border-r pr-6 border-gray-200">
+                        前往官網 <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                    </a>
+
+                    <button class="bg-teal-800 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300 shadow-sm text-sm font-bold">
+                        聯繫我們
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄區塊 -->
+    <section class="hero-gradient text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left">
+            <div class="lg:w-3/4">
+                <div class="inline-block colab-badge px-3 py-1 rounded-full text-xs font-bold mb-4">
+                    <i class="fab fa-google-drive mr-1"></i> COLAB GENERATED ASSET
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    國立屏東科技大學<br><span class="text-teal-400">研究發展處 產學合作中心</span>
+                </h1>
+                <p class="text-xl mb-10 text-gray-300 leading-relaxed">
+                    整合熱帶農業與智慧工業底蘊，驅動企業數位轉型。我們連結學術尖端研究與產業實際需求，為您的企業提供全方位的技術升級方案。
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
+                    <a href="https://ccpc.npust.edu.tw/" target="_blank" class="bg-white text-teal-900 hover:bg-teal-50 px-8 py-4 rounded-lg font-bold text-lg transition duration-300 flex items-center justify-center shadow-lg">
+                        進入官方網站 <i class="fas fa-home ml-2"></i>
+                    </a>
+                    <a href="#special-fields" class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+                        探索核心項目
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心項目區塊 -->
+    <section id="special-fields" class="py-24 tech-bg-soft">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-shadow-sm">核心服務項目</h2>
+                <p class="text-gray-500">深耕農工背景，接軌數位未來</p>
+                <div class="w-20 h-1 bg-teal-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 農業科技區 -->
+                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-green-600 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-leaf text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">智慧農業科技</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        針對熱帶氣候開發智慧監測系統、精準灌溉與節水技術，並推動循環農業資源化。
+                    </p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> AI 病蟲害辨識系統</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 智慧實習農場應用</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 精準育種與栽培管理</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80" alt="[智慧農業]" class="w-full h-40 object-cover rounded-xl shadow-inner">
+                </div>
+
+                <!-- 工業科技區 -->
+                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-blue-600 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-cogs text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">尖端工業科技</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        聚焦智慧製造、綠能電力與車輛工程，協助傳統機械產業升級為高效率產線。
+                    </p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i> 工業 4.0 智慧製造</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i> 電動車電池管理系統</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i> 節能環保技術開發</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="[尖端工業科技]" class="w-full h-40 object-cover rounded-xl shadow-inner">
+                </div>
+
+                <!-- 數位轉型區 -->
+                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-purple-600 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-sync-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">企業數位轉型</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        提供企業從數位化到智慧化的顧問諮詢，包含大數據分析、雲端架構與智慧決策平台建置。
+                    </p>
+                    <ul class="space-y-2 mb-6 text-sm text-gray-500">
+                        <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> 產業數據可視化監測</li>
+                        <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> 企業資源規劃 (ERP) 優化</li>
+                        <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> 零信任資安與雲端管理</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536639a?auto=format&fit=crop&w=400&q=80" alt="[企業數位轉型]" class="w-full h-40 object-cover rounded-xl shadow-inner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 數據亮點 -->
+    <section class="py-16 bg-teal-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-teal-400 mb-2">250+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400">合作企業數量</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-teal-400 mb-2">1,200+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400">有效專利件數</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-teal-400 mb-2">80%</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400">研發落地率</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-extrabold text-teal-400 mb-2">15億+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400">年度產學規模</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 產學合作流程 -->
+    <section id="industry-coop" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-16">產學合作標準化服務流程</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- 連接線 -->
+                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-100 -z-0"></div>
+                
+                <div class="bg-white p-6 rounded-2xl relative z-10">
+                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">1</div>
+                    <h4 class="font-bold mb-2 text-gray-900">需求對接</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">專業經理人一對一諮詢，確認技術缺口。</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl relative z-10">
+                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">2</div>
+                    <h4 class="font-bold mb-2 text-gray-900">技術媒合</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">精準媒合屏科大各領域專家實驗室。</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl relative z-10">
+                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">3</div>
+                    <h4 class="font-bold mb-2 text-gray-900">合約與法律</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">協助議價、智財評估與合約簽署。</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl relative z-10">
+                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">4</div>
+                    <h4 class="font-bold mb-2 text-gray-900">執行追蹤</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">確保計畫進度，協助成果報支。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-16 border-b border-gray-800 pb-12 mb-10">
+            <div>
+                <h4 class="text-xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-seedling text-teal-400 mr-3"></i> 產學合作中心
+                </h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    國立屏東科技大學研究發展處下的核心部門。整合農業、工業與數位技術，是企業轉型最可靠的研發夥伴。
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-teal-700 hover:text-white transition shadow-sm"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-green-600 hover:text-white transition shadow-sm"><i class="fab fa-line"></i></a>
+                    <a href="mailto:ccpc@mail.npust.edu.tw" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-teal-500 hover:text-white transition shadow-sm"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-l-4 border-teal-500 pl-4">聯繫資訊</h4>
+                <ul class="text-gray-400 text-sm space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-university mt-1 mr-3 text-teal-500"></i>
+                        <span>國立屏東科技大學 研究發展處</span>
+                    </li>
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-teal-500"></i> 912 屏東縣內埔鄉學府路1號</li>
+                    <li class="flex items-center"><i class="fas fa-phone mr-3 text-teal-500"></i> +886-8-7703202 分機 6573</li>
+                    <li class="flex items-center"><i class="fas fa-envelope mr-3 text-teal-500"></i> ccpc@mail.npust.edu.tw</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-l-4 border-teal-500 pl-4">官方導覽</h4>
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-400">
+                    <a href="https://ccpc.npust.edu.tw/" target="_blank" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 中心首頁</a>
+                    <a href="https://rd.npust.edu.tw/" target="_blank" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 研發處官網</a>
+                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 專利清單</a>
+                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 表單下載</a>
+                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 合作技術</a>
+                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 數位轉型</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 text-[10px] px-4">
+            <p>&copy; 2024 National Pingtung University of Science and Technology. All Rights Reserved. <br class="md:hidden"> Powered by NPUST CCPC Digital Team.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
