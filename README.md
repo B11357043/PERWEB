@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>劉于嘉 | 屏科大工業管理專業作品集</title>
+    <style>
+        :root {
+            --primary-dark: #002347; /* 工業深藍 */
+            --accent-gold: #ff9f43; /* 活力橘 */
+            --bg-color: #f0f2f5;
+            --section-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', "Microsoft JhengHei", sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: #2f3640;
+        }
+        nav {
+            background: var(--primary-dark);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 5px 12px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent-gold);
+        }
+        header {
+            background: linear-gradient(rgba(0,35,71,0.85), rgba(0,35,71,0.85)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 7rem 1rem;
+            text-align: center;
+        }
+        header h1 { font-size: 2.8rem; margin: 0; }
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 3rem;
+            padding: 0 1rem;
+        }
+        section {
+            background: var(--section-bg);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: var(--primary-dark);
+            border-left: 6px solid var(--accent-gold);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .card h3 { color: var(--primary-dark); margin-top: 0; font-size: 1.2rem; }
+        .tag {
+            background: #e1e8f0;
+            color: var(--primary-dark);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .btn-view {
+            display: inline-block;
+            margin-top: auto;
+            background: var(--primary-dark);
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-view:hover { background: var(--accent-gold); }
+        .highlight-box {
+            background: #fff9f0;
+            border-left: 5px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        .link-text {
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-gold);
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--primary-dark);
+            color: white;
+        }
+        @media (max-width: 768px) { header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span>IE Management Portfolio</span>
+    <a href="https://wp.npust.edu.tw/" target="_blank">國立屏東科技大學官網</a>
+</nav>
+
+<header>
+    <h1>劉于嘉 | Yujia Liu</h1>
+    <p>國立屏東科技大學 工業管理系</p>
+    <p>致力於「效率優化」與「策略創新」的跨領域工管人才</p>
+</header>
+
+<div class="container">
+    <section id="about">
+        <h2>個人簡介</h2>
+        <p>你好！我是劉于嘉，目前就讀於 <a href="https://wp.npust.edu.tw/" target="_blank" class="link-text">國立屏東科技大學</a> <strong>工業管理系</strong>。我擅長結合工業管理實務與市場行銷理論，透過數據分析與軟體操作解決企業營運問題。</p>
+        <p>我致力於將工管系的專業技術應用於實務場域，期望能透過效率優化與策略創新，為企業創造實質價值。</p>
+    </section>
+
+    <section id="projects">
+        <h2>核心能力與專案實績</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <div>
+                    <span class="tag">物料管理</span>
+                    <span class="tag">BOM 分析</span>
+                    <h3>大同電鍋物料與自動化實務</h3>
+                    <p>具備產品結構分析（BOM）實作經驗，針對 26 種零組件進行階層編碼，並熟練操作電子標籤撿貨系統，降低錯誤率。</p>
+                </div>
+                <a href="#" class="btn-view">觀看完整報告</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">品質管理</span>
+                    <span class="tag">品管七大手法</span>
+                    <h3>冷凍食品生產與品質管理</h3>
+                    <p>運用柏拉圖與管制圖等品管手法分析加熱不均與調味偏差，並透過模式識別與變數抽象化建立品質模型。</p>
+                </div>
+                <a href="#" class="btn-view">觀看完整報告</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">行銷策略</span>
+                    <span class="tag">CRM / CLV</span>
+                    <h3>7-11 OPEN POINT 會員優化</h3>
+                    <p>運用 Kotler 理論分析品牌，提出會員分層（Silver/Gold/Black）與訂閱制建議，強化顧客結構性忠誠。</p>
+                </div>
+                <a href="#" class="btn-view">觀看完整提案</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="analysis">
+        <h2>綜合分析與風險評估</h2>
+        <div class="highlight-box">
+            <p><strong>嚴謹的邏輯思考：</strong> 在提出策略建議的同時，我能同步考量以下潛在風險，確保提案的全面性：</p>
+            <ul>
+                <li><strong>資料隱私：</strong> 會員制度優化中的個資保護機制。</li>
+                <li><strong>成本壓力：</strong> 系統導入與分級制度的營運負擔。</li>
+                <li><strong>風險評估：</strong> 會員對制度變更的反彈評估與規避方案。</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>國立屏東科技大學 工業管理系</p>
+    <p>&copy; 2026 劉于嘉. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
