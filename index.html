@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>劉于嘉 | 屏科大工業管理專業作品集</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-dark: #002347;
-            --accent-gold: #ff9f43;
+            --primary-dark: #002347; /* 工業深藍 */
+            --accent-gold: #ff9f43; /* 活力橘 */
             --bg-color: #f0f2f5;
             --section-bg: #ffffff;
         }
-
-        * { box-sizing: border-box; }
-        
-        /* 平滑滾動 */
-        html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Segoe UI', "Microsoft JhengHei", sans-serif;
             line-height: 1.8;
@@ -25,471 +18,192 @@
             background-color: var(--bg-color);
             color: #2f3640;
         }
-
-        /* 導覽列：左上角佈局 */
         nav {
-            background: rgba(0, 35, 71, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
+            background: var(--primary-dark);
+            padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
+            color: white;
+            font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover { color: var(--accent-gold); }
-
-        /* 底線動畫 */
-        .nav-links a::after {
-            content: '';
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            position: absolute;
-            bottom: -5px;
-            left: 0;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 5px 12px;
+            border-radius: 4px;
             transition: 0.3s;
         }
-        .nav-links a:hover::after { width: 100%; }
-
-        .logo { color: white; font-weight: bold; font-size: 1.1rem; }
-
-        /* 英雄區塊 */
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent-gold);
+        }
         header {
-            height: 50vh;
             background: linear-gradient(rgba(0,35,71,0.85), rgba(0,35,71,0.85)), 
                         url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             color: white;
+            padding: 7rem 1rem;
+            text-align: center;
         }
-
+        header h1 { font-size: 2.8rem; margin: 0; }
         .container {
             max-width: 1100px;
             margin: -50px auto 3rem;
             padding: 0 1rem;
         }
-
         section {
             background: var(--section-bg);
-            padding: 3rem;
+            padding: 2.5rem;
             margin-bottom: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            scroll-margin-top: 80px; /* 避免捲動後被導覽列遮擋 */
         }
-
         h2 {
             color: var(--primary-dark);
             border-left: 6px solid var(--accent-gold);
             padding-left: 15px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
-
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
         }
-
         .card {
             border: 1px solid #eee;
+            padding: 1.5rem;
             border-radius: 12px;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: 0.3s;
-            background: white;
         }
-        .card:hover { transform: translateY(-8px); border-color: var(--accent-gold); }
-        
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: #f8f9fa;
-        }
-
-        .card-content { padding: 1.5rem; flex-grow: 1; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .card h3 { color: var(--primary-dark); margin-top: 0; font-size: 1.2rem; }
         .tag {
             background: #e1e8f0;
             color: var(--primary-dark);
             padding: 3px 10px;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
         }
-
         .btn-view {
-            display: block;
-            margin-top: 15px;
+            display: inline-block;
+            margin-top: auto;
             background: var(--primary-dark);
             color: white;
             text-decoration: none;
-            padding: 12px;
+            padding: 10px;
             text-align: center;
             border-radius: 6px;
             font-weight: bold;
             transition: 0.3s;
         }
         .btn-view:hover { background: var(--accent-gold); }
-
-        footer { text-align: center; padding: 4rem; background: var(--primary-dark); color: white; }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 10px; }
-            header h1 { font-size: 2rem; }
+        .highlight-box {
+            background: #fff9f0;
+            border-left: 5px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin-top: 1rem;
         }
+        .link-text {
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-gold);
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: var(--primary-dark);
+            color: white;
+        }
+        @media (max-width: 768px) { header h1 { font-size: 2rem; } }
     </style>
 </head>
-<body id="home">
+<body>
 
 <nav>
-    <div class="nav-links">
-        <a href="#home">首頁</a>
-        <a href="#about">關於我</a>
-        <a href="#projects">產學成果</a>
-    </div>
-    <div class="logo">劉于嘉 | Portfolio</div>
+    <span>IE Management Portfolio</span>
+    <a href="https://wp.npust.edu.tw/" target="_blank">國立屏東科技大學官網</a>
 </nav>
 
 <header>
-    <h1 style="font-size: 2.8rem; margin: 0;">劉于嘉 | Yujia Liu</h1>
+    <h1>劉于嘉 | Yujia Liu</h1>
     <p>國立屏東科技大學 工業管理系</p>
-    <p>致力於「效率優化」與「策略創新」的工管人才</p>
+    <p>致力於「效率優化」與「策略創新」的跨領域工管人才</p>
 </header>
 
 <div class="container">
-    
     <section id="about">
-        <h2>關於我</h2>
-        <p>你好！我是劉于嘉，目前就讀於<strong>屏東科技大學工業管理系</strong>。我擅長結合工業管理實務與市場行銷理論，透過數據分析解決企業營運問題。</p>
-        <p>我具備將複雜流程「變數化」的能力，並熟練運用品管七大手法與物料管理系統，期望為企業創造實質價值。</p>
+        <h2>個人簡介</h2>
+        <p>你好！我是劉于嘉，目前就讀於 <a href="https://wp.npust.edu.tw/" target="_blank" class="link-text">國立屏東科技大學</a> <strong>工業管理系</strong>。我擅長結合工業管理實務與市場行銷理論，透過數據分析與軟體操作解決企業營運問題。</p>
+        <p>我致力於將工管系的專業技術應用於實務場域，期望能透過效率優化與策略創新，為企業創造實質價值。</p>
     </section>
 
     <section id="projects">
-        <h2>產學成果展示</h2>
+        <h2>核心能力與專案實績</h2>
         <div class="grid">
             
             <div class="card">
-                
-                <div class="card-content">
-                    <span class="tag">物料管理</span><span class="tag
-                                                     <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國立屏東科技大學 產學合作中心 - Colab 預覽版</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
-        
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #004d40 0%, #013220 100%);
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        .nav-link::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #4db6ac;
-            transition: width .3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .tech-bg-soft {
-            background-color: #f8fafc;
-        }
-
-        /* Colab 專用標記樣式 */
-        .colab-badge {
-            background: rgba(249, 171, 0, 0.1);
-            border: 1px solid #f9ab00;
-            color: #e37400;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- 頂部 Colab 提示條 -->
-    <div class="bg-amber-50 border-b border-amber-100 py-2 px-4 text-center text-xs text-amber-800">
-        <i class="fas fa-code mr-2"></i> 這是從 Google Colab 生成的網頁預覽版本。
-    </div>
-
-    <!-- 導覽列 -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                        <div class="w-10 h-10 bg-teal-800 rounded-full flex items-center justify-center text-white mr-3 shadow-inner">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                        <div>
-                            <span class="text-xl font-bold text-teal-900 block leading-tight">研究發展處 產學合作中心</span>
-                            <span class="text-xs text-gray-500 tracking-widest uppercase">NPUST Industry-Academia</span>
-                        </div>
-                    </div>
+                <div>
+                    <span class="tag">物料管理</span>
+                    <span class="tag">BOM 分析</span>
+                    <h3>大同電鍋物料與自動化實務</h3>
+                    <p>具備產品結構分析（BOM）實作經驗，針對 26 種零組件進行階層編碼，並熟練操作電子標籤撿貨系統，降低錯誤率。</p>
                 </div>
-                <!-- 桌面版選單 -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#special-fields" class="nav-link text-gray-700 hover:text-teal-700 font-medium text-sm">核心項目</a>
-                    <a href="#industry-coop" class="nav-link text-gray-700 hover:text-teal-700 font-medium text-sm">服務流程</a>
-                    
-                    <!-- 前往中心官網按鈕 -->
-                    <a href="https://ccpc.npust.edu.tw/" target="_blank" class="flex items-center text-teal-700 hover:text-teal-900 font-bold text-sm border-r pr-6 border-gray-200">
-                        前往官網 <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                    </a>
-
-                    <button class="bg-teal-800 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300 shadow-sm text-sm font-bold">
-                        聯繫我們
-                    </button>
-                </div>
+                <a href="#" class="btn-view">觀看完整報告</a>
             </div>
-        </div>
-    </nav>
 
-    <!-- 英雄區塊 -->
-    <section class="hero-gradient text-white py-24 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
-            </svg>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left">
-            <div class="lg:w-3/4">
-                <div class="inline-block colab-badge px-3 py-1 rounded-full text-xs font-bold mb-4">
-                    <i class="fab fa-google-drive mr-1"></i> COLAB GENERATED ASSET
+            <div class="card">
+                <div>
+                    <span class="tag">品質管理</span>
+                    <span class="tag">品管七大手法</span>
+                    <h3>冷凍食品生產與品質管理</h3>
+                    <p>運用柏拉圖與管制圖等品管手法分析加熱不均與調味偏差，並透過模式識別與變數抽象化建立品質模型。</p>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                    國立屏東科技大學<br><span class="text-teal-400">研究發展處 產學合作中心</span>
-                </h1>
-                <p class="text-xl mb-10 text-gray-300 leading-relaxed">
-                    整合熱帶農業與智慧工業底蘊，驅動企業數位轉型。我們連結學術尖端研究與產業實際需求，為您的企業提供全方位的技術升級方案。
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
-                    <a href="https://ccpc.npust.edu.tw/" target="_blank" class="bg-white text-teal-900 hover:bg-teal-50 px-8 py-4 rounded-lg font-bold text-lg transition duration-300 flex items-center justify-center shadow-lg">
-                        進入官方網站 <i class="fas fa-home ml-2"></i>
-                    </a>
-                    <a href="#special-fields" class="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
-                        探索核心項目
-                    </a>
-                </div>
+                <a href="#" class="btn-view">觀看完整報告</a>
             </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">行銷策略</span>
+                    <span class="tag">CRM / CLV</span>
+                    <h3>7-11 OPEN POINT 會員優化</h3>
+                    <p>運用 Kotler 理論分析品牌，提出會員分層（Silver/Gold/Black）與訂閱制建議，強化顧客結構性忠誠。</p>
+                </div>
+                <a href="#" class="btn-view">觀看完整提案</a>
+            </div>
+
         </div>
     </section>
 
-    <!-- 核心項目區塊 -->
-    <section id="special-fields" class="py-24 tech-bg-soft">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-shadow-sm">核心服務項目</h2>
-                <p class="text-gray-500">深耕農工背景，接軌數位未來</p>
-                <div class="w-20 h-1 bg-teal-600 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 農業科技區 -->
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-green-600 card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center mr-4">
-                            <i class="fas fa-leaf text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">智慧農業科技</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        針對熱帶氣候開發智慧監測系統、精準灌溉與節水技術，並推動循環農業資源化。
-                    </p>
-                    <ul class="space-y-2 mb-6 text-sm text-gray-500">
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> AI 病蟲害辨識系統</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 智慧實習農場應用</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 精準育種與栽培管理</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80" alt="[智慧農業]" class="w-full h-40 object-cover rounded-xl shadow-inner">
-                </div>
-
-                <!-- 工業科技區 -->
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-blue-600 card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center mr-4">
-                            <i class="fas fa-cogs text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">尖端工業科技</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        聚焦智慧製造、綠能電力與車輛工程，協助傳統機械產業升級為高效率產線。
-                    </p>
-                    <ul class="space-y-2 mb-6 text-sm text-gray-500">
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i> 工業 4.0 智慧製造</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i> 電動車電池管理系統</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i> 節能環保技術開發</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="[尖端工業科技]" class="w-full h-40 object-cover rounded-xl shadow-inner">
-                </div>
-
-                <!-- 數位轉型區 -->
-                <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-purple-600 card-hover">
-                    <div class="flex items-center mb-6">
-                        <div class="w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center mr-4">
-                            <i class="fas fa-sync-alt text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">企業數位轉型</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        提供企業從數位化到智慧化的顧問諮詢，包含大數據分析、雲端架構與智慧決策平台建置。
-                    </p>
-                    <ul class="space-y-2 mb-6 text-sm text-gray-500">
-                        <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> 產業數據可視化監測</li>
-                        <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> 企業資源規劃 (ERP) 優化</li>
-                        <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> 零信任資安與雲端管理</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536639a?auto=format&fit=crop&w=400&q=80" alt="[企業數位轉型]" class="w-full h-40 object-cover rounded-xl shadow-inner">
-                </div>
-            </div>
+    <section id="analysis">
+        <h2>綜合分析與風險評估</h2>
+        <div class="highlight-box">
+            <p><strong>嚴謹的邏輯思考：</strong> 在提出策略建議的同時，我能同步考量以下潛在風險，確保提案的全面性：</p>
+            <ul>
+                <li><strong>資料隱私：</strong> 會員制度優化中的個資保護機制。</li>
+                <li><strong>成本壓力：</strong> 系統導入與分級制度的營運負擔。</li>
+                <li><strong>風險評估：</strong> 會員對制度變更的反彈評估與規避方案。</li>
+            </ul>
         </div>
     </section>
+</div>
 
-    <!-- 數據亮點 -->
-    <section class="py-16 bg-teal-950 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-teal-400 mb-2">250+</div>
-                    <div class="text-xs uppercase tracking-widest text-gray-400">合作企業數量</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-teal-400 mb-2">1,200+</div>
-                    <div class="text-xs uppercase tracking-widest text-gray-400">有效專利件數</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-teal-400 mb-2">80%</div>
-                    <div class="text-xs uppercase tracking-widest text-gray-400">研發落地率</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-4xl font-extrabold text-teal-400 mb-2">15億+</div>
-                    <div class="text-xs uppercase tracking-widest text-gray-400">年度產學規模</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 產學合作流程 -->
-    <section id="industry-coop" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-16">產學合作標準化服務流程</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <!-- 連接線 -->
-                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-100 -z-0"></div>
-                
-                <div class="bg-white p-6 rounded-2xl relative z-10">
-                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">1</div>
-                    <h4 class="font-bold mb-2 text-gray-900">需求對接</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">專業經理人一對一諮詢，確認技術缺口。</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl relative z-10">
-                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">2</div>
-                    <h4 class="font-bold mb-2 text-gray-900">技術媒合</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">精準媒合屏科大各領域專家實驗室。</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl relative z-10">
-                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">3</div>
-                    <h4 class="font-bold mb-2 text-gray-900">合約與法律</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">協助議價、智財評估與合約簽署。</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl relative z-10">
-                    <div class="w-16 h-16 bg-teal-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold shadow-lg border-4 border-white">4</div>
-                    <h4 class="font-bold mb-2 text-gray-900">執行追蹤</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">確保計畫進度，協助成果報支。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 頁腳 -->
-    <footer class="bg-gray-900 text-white pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-16 border-b border-gray-800 pb-12 mb-10">
-            <div>
-                <h4 class="text-xl font-bold mb-6 flex items-center">
-                    <i class="fas fa-seedling text-teal-400 mr-3"></i> 產學合作中心
-                </h4>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                    國立屏東科技大學研究發展處下的核心部門。整合農業、工業與數位技術，是企業轉型最可靠的研發夥伴。
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-teal-700 hover:text-white transition shadow-sm"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-green-600 hover:text-white transition shadow-sm"><i class="fab fa-line"></i></a>
-                    <a href="mailto:ccpc@mail.npust.edu.tw" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-teal-500 hover:text-white transition shadow-sm"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-6 border-l-4 border-teal-500 pl-4">聯繫資訊</h4>
-                <ul class="text-gray-400 text-sm space-y-4">
-                    <li class="flex items-start">
-                        <i class="fas fa-university mt-1 mr-3 text-teal-500"></i>
-                        <span>國立屏東科技大學 研究發展處</span>
-                    </li>
-                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-teal-500"></i> 912 屏東縣內埔鄉學府路1號</li>
-                    <li class="flex items-center"><i class="fas fa-phone mr-3 text-teal-500"></i> +886-8-7703202 分機 6573</li>
-                    <li class="flex items-center"><i class="fas fa-envelope mr-3 text-teal-500"></i> ccpc@mail.npust.edu.tw</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-6 border-l-4 border-teal-500 pl-4">官方導覽</h4>
-                <div class="grid grid-cols-2 gap-4 text-sm text-gray-400">
-                    <a href="https://ccpc.npust.edu.tw/" target="_blank" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 中心首頁</a>
-                    <a href="https://rd.npust.edu.tw/" target="_blank" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 研發處官網</a>
-                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 專利清單</a>
-                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 表單下載</a>
-                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 合作技術</a>
-                    <a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-[10px] mr-2 text-teal-500"></i> 數位轉型</a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-gray-500 text-[10px] px-4">
-            <p>&copy; 2024 National Pingtung University of Science and Technology. All Rights Reserved. <br class="md:hidden"> Powered by NPUST CCPC Digital Team.</p>
-        </div>
-    </footer>
+<footer>
+    <p>國立屏東科技大學 工業管理系</p>
+    <p>&copy; 2026 劉于嘉. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
